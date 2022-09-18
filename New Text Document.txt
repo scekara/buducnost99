@@ -1,0 +1,48 @@
+package elvisprisli;
+
+public class Main {
+    public static void main(String[] args) {
+        Nit elvis = new Nit(  "ELVIS", 1000);
+        Nit prisli = new Nit( "PRISLI",  2000);
+        elvis.start();
+        prisli.start();
+    }
+}
+
+
+
+
+
+
+
+
+drugi nit
+
+
+
+package elvisprisli;
+public class Nit extends Thread {
+    private String name;
+    private int pauza;
+
+    public Nit(String name,int pauza) {
+        this.name = name;
+        this.pauza = pauza;
+    }
+    @Override
+    public void run (){
+        while (true) {
+            try{
+                System.out.println(this.name);
+                sleep(pauza);
+
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+
+            }
+
+        }
+
+    }
+}
